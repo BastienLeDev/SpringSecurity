@@ -28,7 +28,6 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import fr.solutec.repository.UserRepository;
-import fr.solutec.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 
 
@@ -39,8 +38,7 @@ public class SecurityConfig {
 	private final JwtAuthFilter jwtAuthFilter;
 		@Autowired
 		private UserRepository userRepo;
-		@Autowired
-		UserDetailsServiceImpl userDetailsService;
+
 	
 		
 	
