@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.entities.User;
 import fr.solutec.repository.UserRepository;
+
 
 @RestController
 @CrossOrigin("*")
@@ -29,11 +29,13 @@ public class UserRest {
 		  return userRepository.save(u);
 	  }
 	  
-
+	  
 	  @GetMapping("liste") //API nécéssitant une authentification
 	  public Iterable<User> VoirListe(){
 		  return userRepository.findAll();
 		  }
+	  
+
 	  @GetMapping("coucou") //API accessible pour tout le monde
 	    public ResponseEntity<String> sayGoodBye() {
 	        return ResponseEntity.ok("Good by and see you later");
